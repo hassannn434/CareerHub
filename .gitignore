@@ -1,0 +1,13 @@
+.gitignore
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+node_modules/
+.DS_Store
+.env.local
+*.sqlite3
+backend/__pycache__/
