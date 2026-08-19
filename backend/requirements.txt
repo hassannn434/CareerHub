@@ -9,3 +9,8 @@ passlib[bcrypt]
 scikit-learn
 numpy
 pandas
+alembic
+pytest
+httpx
+pytest-asyncio
+python-multipart
