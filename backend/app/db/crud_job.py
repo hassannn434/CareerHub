@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from ..models.job import Job
 from ..models.company import Company
 from ..models.application import Application
-from ..schemas.job import JobCreate, ApplicationCreate
+from ..schemas.job import CompanyCreate, JobCreate, ApplicationCreate
 from typing import List, Optional
 from uuid import UUID
 from sqlalchemy import or_, and_

@@ -7,7 +7,7 @@ from ..models.offer import Offer
 from ..schemas.pipeline import CandidateCreate, NoteCreate, InterviewCreate, OfferCreate
 from typing import List, Optional
 from uuid import UUID
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Candidates
 def create_candidate(db: Session, candidate_in: CandidateCreate, created_by: UUID = None):
@@ -79,9 +79,9 @@ def update_offer_status(db: Session, offer_id: UUID, status: str):
         return None
     offer.status = status
     if status == "sent":
-        offer.sent_at = datetime.utcnow()
+        offer.sent_at = datetime.now(timezone.utc)
     if status == "accepted":
-        offer.accepted_at = datetime.utcnow()
+        offer.accepted_at = datetime.now(timezone.utc)
     db.commit()
     db.refresh(offer)
     return offer
